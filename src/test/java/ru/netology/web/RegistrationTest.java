@@ -1,5 +1,6 @@
 package ru.netology.web;
 
+import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 
@@ -12,14 +13,8 @@ import static com.codeborne.selenide.Selenide.*;
 class RegistrationTest {
     @Test
     void shouldRegisterByAccountNumberDOMModification() {
+        Configuration.holdBrowserOpen = true;
         open("http://localhost:9999");
-//        $$(".tab-item").find(exactText("По номеру счёта")).click();
-//        $("[name='number']").setValue("4055 0100 0123 4613 8564");
-//        $("[name='phone']").setValue("+792000000000");
-//        $$("button").find(exactText("Продолжить")).click();
-//        $(withText("Успешная авторизация")).shouldBe(visible, Duration.ofMillis(5000));
-//        $(byText("Личный кабинет")).shouldBe(visible, Duration.ofMillis(5000));
-
         $("[placeholder='Город']").setValue("Волгоград");
         $("[placeholder='Дата встречи']").sendKeys(Keys.CONTROL + "a");
         $("[placeholder='Дата встречи']").sendKeys(Keys.BACK_SPACE);
