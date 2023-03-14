@@ -13,7 +13,6 @@ import static com.codeborne.selenide.Selenide.*;
 class RegistrationTest {
     @Test
     void shouldRegisterByAccountNumberDOMModification() {
-        Configuration.holdBrowserOpen = true;
         open("http://localhost:9999");
         $("[placeholder='Город']").setValue("Волгоград");
         $("[placeholder='Дата встречи']").sendKeys(Keys.CONTROL + "a");
